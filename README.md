@@ -5,7 +5,7 @@ Goal is to ease simultaneously developmentfor Linux, Win32 and Mac OS X. mingw32
 It's not meant to be used as a library, but as copy-pastable code to get you started quickly.
 
 # Usage
-- Linux: `make -f Makefile.linux`
+- Linux: `make`
 - Win32: `make -f Makefile.mingw32` (on Fedora there are mingw32 packages for all dependencies)
 
 # Done
