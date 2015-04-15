@@ -1,0 +1,9 @@
+CC=i686-w64-mingw32-gcc
+SDL2_CONFIG=/usr/i686-w64-mingw32/sys-root/mingw/bin/sdl2-config
+#OPT=-Ofast
+OPT=-O0 -ggdb3
+CFLAGS=--std=c99 $(OPT) -Wall $(shell $(SDL2_CONFIG) --cflags) -DBUILD_MINGW32
+LINK=-L$(SDL2_BASE)/lib/x86 $(shell $(SDL2_CONFIG) --libs) -lglew32 -lopengl32
+EXE=stub.exe
+
+include Makefile.common

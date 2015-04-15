@@ -1,0 +1,28 @@
+GLSL2INC=./glsl2inc.pl
+
+all: $(EXE)
+
+a.o: a.c
+	$(CC) $(CFLAGS) -c a.c
+
+m.o: m.c
+	$(CC) $(CFLAGS) -c m.c
+
+vtxbuf.o: vtxbuf.c
+	$(CC) $(CFLAGS) -c vtxbuf.c
+
+shader.o: shader.c
+	$(CC) $(CFLAGS) -c shader.c
+
+shader0.glsl.inc: shader0.vert.glsl shader0.frag.glsl
+	$(GLSL2INC) shader0 shader0.glsl.inc shader0.vert.glsl shader0.frag.glsl
+
+stub.o: stub.c a.h m.h shader0.glsl.inc
+	$(CC) $(CFLAGS) -c stub.c
+
+$(EXE): stub.o a.o m.o vtxbuf.o shader.o
+	$(CC) stub.o a.o m.o vtxbuf.o shader.o -o $(EXE) $(LINK)
+
+clean:
+	rm -rf *.o *.glsl.inc $(EXE)
+
