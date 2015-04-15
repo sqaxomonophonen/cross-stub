@@ -1,6 +1,6 @@
 # Stub for gamedev cross development
 
-Goal is to ease development simultaneously for Linux, win32 and Mac OS X. mingw32 is used to build Windows executables.
+Goal is to ease simultaneously developmentfor Linux, Win32 and Mac OS X. mingw32 is used to build Windows executables.
 
 It's not meant to be used as a library, but as copy-pastable code to get you started quickly.
 
@@ -17,7 +17,7 @@ It's not meant to be used as a library, but as copy-pastable code to get you sta
 # To do
 - Mac OS X (.app)
 - `make dist` packaging
-- exe/.app icons
-- text rendering
+- .exe/.app icons
+- text rendering via `stb_truetype.h`
 
 Thanks to Sean Barrett for the stb libraries (http://github.com/nothings/stb)
