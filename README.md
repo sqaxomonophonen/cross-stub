@@ -7,15 +7,15 @@ It's not meant to be used as a library, but as copy-pastable code to get you sta
 # Usage
 - Linux: `make`
 - Win32: `make -f Makefile.mingw32` (on Fedora there are mingw32 packages for all dependencies)
+- OS X: `make -f Makefile.osx`
 
 # Done
-- Linux and mingw32
+- Linux, Win32(mingw32), OS X
 - SDL2
 - OpenGL, texture loading via `stb_image.h`
 - Ogg Vorbis music playback via SDL2 and `stb_vorbis.c`
 
 # To do
-- Mac OS X (.app)
 - `make dist` packaging
 - .exe/.app icons
 - text rendering via `stb_truetype.h`
