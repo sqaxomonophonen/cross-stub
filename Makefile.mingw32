@@ -1,5 +1,6 @@
 CC=i686-w64-mingw32-gcc
-SDL2_CONFIG=/usr/i686-w64-mingw32/sys-root/mingw/bin/sdl2-config
+MINGW32_BIN=/usr/i686-w64-mingw32/sys-root/mingw/bin
+SDL2_CONFIG=${MINGW32_BIN}/sdl2-config
 #OPT=-Ofast
 OPT=-O0 -ggdb3
 CFLAGS=--std=c99 $(OPT) -Wall $(shell $(SDL2_CONFIG) --cflags) -DBUILD_MINGW32
@@ -14,7 +15,7 @@ dist: ${EXE}
 	mkdir -p build-mingw32/${APP}
 	cp ${EXE} build-mingw32/${APP}/
 	cp -R assets build-mingw32/${APP}/
-	cp /usr/i686-w64-mingw32/sys-root/mingw/bin/SDL2.dll build-mingw32/${APP}/
-	cp /usr/i686-w64-mingw32/sys-root/mingw/bin/glew32.dll build-mingw32/${APP}/
+	cp ${MINGW32_BIN}/SDL2.dll build-mingw32/${APP}/
+	cp ${MINGW32_BIN}/glew32.dll build-mingw32/${APP}/
 	# TODO icon via i686-w64-mingw32-windres
 	cd build-mingw32 && zip -r ../${APP}.zip ${APP}
