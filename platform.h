@@ -4,7 +4,7 @@
 	#define USE_GLEW
 	#include <GL/glew.h>
 #elif BUILD_OSX
-	#include <GL/gl.h>
+	#include <gl.h>
 #else
 	#error "you must define a build platform"
 #endif
