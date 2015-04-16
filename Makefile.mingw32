@@ -5,5 +5,16 @@ OPT=-O0 -ggdb3
 CFLAGS=--std=c99 $(OPT) -Wall $(shell $(SDL2_CONFIG) --cflags) -DBUILD_MINGW32
 LINK=-L$(SDL2_BASE)/lib/x86 $(shell $(SDL2_CONFIG) --libs) -lglew32 -lopengl32
 EXE=stub.exe
+APP=stub
 
 include Makefile.common
+
+dist: ${EXE}
+	rm -rf build-mingw32 ${APP}.zip
+	mkdir -p build-mingw32/${APP}
+	cp ${EXE} build-mingw32/${APP}/
+	cp -R assets build-mingw32/${APP}/
+	cp /usr/i686-w64-mingw32/sys-root/mingw/bin/SDL2.dll build-mingw32/${APP}/
+	cp /usr/i686-w64-mingw32/sys-root/mingw/bin/glew32.dll build-mingw32/${APP}/
+	# TODO icon via i686-w64-mingw32-windres
+	cd build-mingw32 && zip -r ../${APP}.zip ${APP}
