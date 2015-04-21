@@ -1,6 +1,6 @@
 # Stub for gamedev cross development
 
-Goal is to ease simultaneously developmentfor Linux, Win32 and Mac OS X. mingw32 is used to build Windows executables.
+Goal is to ease simultaneous development for Linux, Win32 and Mac OS X. mingw32 is used to build Windows executables.
 
 It's not meant to be used as a library, but as copy-pastable code to get you started quickly.
 
